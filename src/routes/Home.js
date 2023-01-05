@@ -58,7 +58,19 @@ const Home = () => {
             <button type="submit">Submit</button>
           </form>
         </div>
-        <div className="products-tab"></div>
+        <div className="products-tab">
+          <table className="tab">
+            <thead>
+              <th>Product name</th>
+              <th>Product price</th>
+              <th>Product description</th>
+              <th>Quantity</th>
+            </thead>
+            <tbody>
+              <tr>EMPTY</tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </>
   );
