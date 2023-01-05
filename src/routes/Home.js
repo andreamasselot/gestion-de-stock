@@ -17,12 +17,17 @@ const Home = () => {
     const value = event.target.value;
     setProductDescription(value);
   };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(productName);
+  };
   return (
     <>
       <section className="container">
         <div className="product-creation-container">
-          <form className="product-creation">
-            <label for="product-name">Product name:</label>
+          <form className="product-creation" onSubmit={handleSubmit}>
+            <label htmlFor="product-name">Product name:</label>
             <input
               type="text"
               name="product-name"
@@ -31,7 +36,7 @@ const Home = () => {
               value={productName}
               onChange={handleProductNameChange}
             />
-            <label for="product-price">Product price:</label>
+            <label htmlFor="product-price">Product price:</label>
             <input
               type="text"
               name="product-price"
@@ -40,7 +45,7 @@ const Home = () => {
               value={productPrice}
               onChange={handleProductPriceChange}
             />
-            <label for="product-description">Product description:</label>
+            <label htmlFor="product-description">Product description:</label>
             <textarea
               name="product-description"
               placeholder="Describe the product..."
@@ -50,6 +55,7 @@ const Home = () => {
               value={productDescription}
               onChange={handleProductDescriptionChange}
             ></textarea>
+            <button type="submit">Submit</button>
           </form>
         </div>
         <div className="products-tab"></div>
